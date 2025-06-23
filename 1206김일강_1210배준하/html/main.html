@@ -3,42 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지구인사이드</title>
+    <title>지구인사이드 - 제로웨이스트</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+    <!-- 상단 고정 헤더: 로고+메뉴 -->
     <header class="site-header">
-        <div class="logo">
-            <img src="logo-placeholder.png" alt="지구인사이드 로고">
+        <div class="logo" onclick="goHome()">
+            <!-- 로고 클릭 시 메인 이동 -->
+            <img src="../images/logo.png" alt="지구인사이드 로고">
         </div>
         <nav class="main-navigation">
             <ul>
-                <li><a href="#">제품 & 브랜드</a></li>
-                <li><a href="#">리소스 센터</a></li>
-                <li><a href="#">뉴스 & 트렌드</a></li>
-                <li><a href="#">지구인 커뮤니티</a></li>
-                <li><a href="#">이벤트& 혜택</a></li>
+                <li><a href="main.html">홈</a></li>
+                <li><a href="sub1.html">제품 & 브랜드</a></li>
+                <li><a href="sub2.html">리소스 센터</a></li>
+                <li><a href="#news">뉴스 & 트렌드</a></li>
+                <li><a href="#community">지구인 커뮤니티</a></li>
+                <li><a href="#events">이벤트 & 혜택</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- 팝업(공지) -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">×</span>
+            <h3>공지사항</h3>
+            <p>제로웨이스트 캠페인에 참여해주셔서 감사합니다!</p>
+        </div>
+    </div>
+
     <main class="main-content">
+        <!-- 히어로 영역: 이미지+텍스트 -->
         <section class="hero">
-            <img src="forest-placeholder.jpg" alt="숲의 이미지">
+            <img src="../images/forest.png" alt="숲 이미지" id="mainImg">
             <div class="hero-text">
                 <h1>숲을 살리는 방법</h1>
                 <p>zero waste</p>
             </div>
         </section>
 
-        <section class="secondary-content">
+        <!-- 제로웨이스트 소개 (목록 포함) -->
+        <section class="zero-waste-info">
             <div class="info-box">
-                <p>어쩌구<br>저쩌구</p>
-            </div>
-            <div class="additional-info">
-                <p>네이비</p>
+                <h2>Zero-waste란?</h2>
+                <ul>
+                    <li>모든 제품이 순환될 수 있도록 디자인</li>
+                    <li>쓰레기를 만들지 않는 라이프스타일</li>
+                    <li>쓰레기 최소화/아예 만들지 않기</li>
+                </ul>
             </div>
         </section>
+
+        <!-- 실천 가이드 (목록) -->
+        <section class="guide">
+            <div class="guide-content">
+                <h2>실천 가이드</h2>
+                <ol>
+                    <li>공간별 실천법 (주방, 욕실, 사무실, 외출 시)</li>
+                    <li>초보자를 위한 단계별 시작 방법</li>
+                    <li>계절별/상황별 맞춤 팁</li>
+                    <li>DIY 제작법 (천연 세제, 밀랍 랩 등)</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 표 예시 -->
+        <section class="table-section">
+            <h2>제로웨이스트 5R 원칙</h2>
+            <table>
+                <thead>
+                    <tr><th>원칙</th><th>설명</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Refuse</td><td>거절하기</td></tr>
+                    <tr><td>Reduce</td><td>줄이기</td></tr>
+                    <tr><td>Reuse</td><td>재사용하기</td></tr>
+                    <tr><td>Recycle</td><td>재활용하기</td></tr>
+                    <tr><td>Rot</td><td>썩히기(퇴비화)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 폼 예시 -->
+        <section class="form-section">
+            <h2>문의하기</h2>
+            <form id="contactForm">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required>
+                <label for="msg">문의 내용</label>
+                <textarea id="msg" name="msg" required></textarea>
+                <button type="submit">보내기</button>
+            </form>
+        </section>
     </main>
+
+    <!-- 푸터 -->
+    <footer class="site-footer">
+        <div>© 2024 지구인사이드 | 연락처: info@earthinside.com | <a href="#">개인정보처리방침</a></div>
+    </footer>
+    <script src="../js/main.js"></script>
 </body>
 </html>
