@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지구인사이드 - 제로웨이스트</title>
+    <title>지구인사이드 - 메인</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <!-- 상단 고정 헤더: 로고+메뉴 -->
+    <!-- 상단 고정 네비게이션 (flex/grid 활용) -->
     <header class="site-header">
-        <div class="logo" onclick="goHome()">
-            <!-- 로고 클릭 시 메인 이동 -->
+        <div class="logo" onclick="location.href='main.html'">
             <img src="../images/logo.png" alt="지구인사이드 로고">
             <span class="logo-text">지구인사이드</span>
         </div>
         <nav class="main-navigation">
             <ul>
-                <li><a href="main.html">홈</a></li>
-                <li><a href="sub1.html">제품 & 브랜드</a></li>
-                <li><a href="sub2.html">리소스 센터</a></li>
-                <li><a href="#news">뉴스 & 트렌드</a></li>
-                <li><a href="#community">지구인 커뮤니티</a></li>
-                <li><a href="#events">이벤트 & 혜택</a></li>
+                <li><a href="main.html" class="active">홈</a></li>
+                <li><a href="products.html">제품 & 브랜드</a></li>
+                <li><a href="news.html">뉴스 & 트렌드</a></li>
+                <li><a href="resource.html">리소스 센터</a></li>
+                <li><a href="#">지구인 커뮤니티</a></li>
+                <li><a href="#">이벤트& 혜택</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- 팝업(공지) -->
+    <!-- 공지 팝업 (닫기 가능) -->
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-btn" id="closePopup">×</span>
@@ -34,77 +32,90 @@
             <p>제로웨이스트 캠페인에 참여해주셔서 감사합니다!</p>
         </div>
     </div>
-
     <main class="main-content">
-        <!-- 히어로 영역: 이미지+텍스트 -->
-        <section class="hero">
+        <!-- 히어로 카드 (이미지+타이틀) -->
+        <section class="hero-card">
             <img src="../images/forest.png" alt="숲 이미지" id="mainImg">
-            <div class="hero-text">
-                <h1>숲을 살리는 방법</h1>
-                <p>zero waste</p>
+            <div class="hero-title">
+                <h1>제로웨이스트, <span>지구를 살리는 작은 실천</span></h1>
             </div>
         </section>
-
-        <!-- 제로웨이스트 소개 (목록 포함) -->
-        <section class="zero-waste-info">
-            <div class="info-box">
-                <h2>Zero-waste란?</h2>
+        <!-- 소개 카드 (flex) -->
+        <section class="card intro-card">
+            <img src="../images/leaf.png" alt="잎사귀" class="leaf-img">
+            <div class="intro-text">
                 <ul>
                     <li>모든 제품이 순환될 수 있도록 디자인</li>
                     <li>쓰레기를 만들지 않는 라이프스타일</li>
-                    <li>쓰레기 최소화/아예 만들지 않기</li>
+                    <li><span class="highlight">쓰레기를 최소화하거나 아예 만들지 않으려는 노력</span></li>
                 </ul>
             </div>
         </section>
-
-        <!-- 실천 가이드 (목록) -->
-        <section class="guide">
-            <div class="guide-content">
-                <h2>실천 가이드</h2>
-                <ol>
-                    <li>공간별 실천법 (주방, 욕실, 사무실, 외출 시)</li>
-                    <li>초보자를 위한 단계별 시작 방법</li>
-                    <li>계절별/상황별 맞춤 팁</li>
-                    <li>DIY 제작법 (천연 세제, 밀랍 랩 등)</li>
+        <!-- 5R 원칙 카드 (grid) -->
+        <section class="card five-r-card">
+            <h2>5R 원칙</h2>
+            <div class="five-r-list">
+                <div class="five-r-item"><span>Refuse</span><small>거절하기</small></div>
+                <div class="five-r-item"><span>Reduce</span><small>줄이기</small></div>
+                <div class="five-r-item"><span>Reuse</span><small>재사용하기</small></div>
+                <div class="five-r-item"><span>Recycle</span><small>재활용하기</small></div>
+                <div class="five-r-item"><span>Rot</span><small>퇴비시키기</small></div>
+            </div>
+        </section>
+        <!-- 표+로드맵 카드 (grid) -->
+        <section class="card stats-roadmap-card">
+            <div class="stats-box">
+                <h3>연간 플라스틱 배출량</h3>
+                <table class="stats-table">
+                    <thead>
+                        <tr><th>년도</th><th>배출량</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2018</td><td>8,244</td></tr>
+                        <tr><td>2019</td><td>10,203</td></tr>
+                        <tr><td>2020</td><td>10,816</td></tr>
+                        <tr><td>2021</td><td>11,932</td></tr>
+                    </tbody>
+                </table>
+                <div class="unit">(단위 : 톤)</div>
+            </div>
+            <div class="roadmap-box">
+                <h3>제로 웨이스트 로드맵</h3>
+                <ol class="roadmap-flow">
+                    <li>현재 상태 파악하기</li>
+                    <li>쉽게 실천할 수 있는 것부터 시작하기</li>
+                    <li>생활 습관 바꾸기</li>
+                    <li>소비 패턴 점검하기</li>
+                    <li>본격적인 제로웨이스트 생활</li>
                 </ol>
             </div>
         </section>
-
-        <!-- 표 예시 -->
-        <section class="table-section">
-            <h2>제로웨이스트 5R 원칙</h2>
-            <table>
-                <thead>
-                    <tr><th>원칙</th><th>설명</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Refuse</td><td>거절하기</td></tr>
-                    <tr><td>Reduce</td><td>줄이기</td></tr>
-                    <tr><td>Reuse</td><td>재사용하기</td></tr>
-                    <tr><td>Recycle</td><td>재활용하기</td></tr>
-                    <tr><td>Rot</td><td>썩히기(퇴비화)</td></tr>
-                </tbody>
-            </table>
+        <!-- 체크리스트+DIY 카드 (flex) -->
+        <section class="card checklist-diy-card">
+            <ul class="checklist-box">
+                <li><label><input type="checkbox"> 초보자를 위한 단계별 시작 방법</label></li>
+                <li><label><input type="checkbox"> 생활 공간별 실천법</label></li>
+                <li><label><input type="checkbox"> 계절별/상황별 맞춤 팁</label></li>
+                <li><label><input type="checkbox" checked style="accent-color:gold;"> 천연재료 DIY 제작법</label></li>
+            </ul>
+            <div class="diy-box">
+                <img src="../images/diy.jpg" alt="DIY 이미지" class="diy-img">
+                <div class="play-btn">▶</div>
+            </div>
         </section>
-
-        <!-- 폼 예시 -->
-        <section class="form-section">
-            <h2>문의하기</h2>
-            <form id="contactForm">
-                <label for="name">이름</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">이메일</label>
-                <input type="email" id="email" name="email" required>
-                <label for="msg">문의 내용</label>
-                <textarea id="msg" name="msg" required></textarea>
-                <button type="submit">보내기</button>
+        <!-- 문의 폼 카드 -->
+        <section class="card contact-card" id="contact">
+            <form class="contact-form">
+                <input type="text" placeholder="가벼운 문의" required>
+                <button type="submit">제출</button>
             </form>
         </section>
     </main>
-
     <!-- 푸터 -->
     <footer class="site-footer">
-        <div>© 2024 지구인사이드 | 연락처: junha0729@dgsw.hs.kr | <a href="#">개인정보처리방침</a></div>
+        <div>email : junha0729@dgsw.hs.kr | <a href="#">개인정보처리방침</a><br>
+        이 웹사이트는 사용자의 정보를 함부로 쓰지않습니다.<br>
+        본 사이트의 저작권은 없습니다 아무렇게나 쓰세요</div>
     </footer>
     <script src="../js/main.js"></script>
 </body>

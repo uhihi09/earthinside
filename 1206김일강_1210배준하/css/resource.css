@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    background: #fff;
+    color: #222;
+}
+.site-header {
+    background: #eaffea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 5vw 12px 5vw;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(127,201,127,0.10);
+    border-bottom: 2px solid #b2e59f;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+.logo img {
+    height: 48px;
+    width: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+}
+.logo-text {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #2c5282;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #7fc97f 10%, #2c5282 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 12px rgba(127,201,127,0.08);
+    transition: transform 0.2s;
+}
+.logo-text:hover { transform: scale(1.06) rotate(-2deg); }
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+.main-navigation li {
+    display: flex;
+    align-items: center;
+}
+.main-navigation a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 700;
+    font-size: 1.13rem;
+    padding: 10px 0 8px 0;
+    position: relative;
+    background: none;
+    border: none;
+    transition: color 0.2s;
+    display: inline-block;
+}
+.main-navigation a.active, .main-navigation a:focus {
+    color: #2c5282;
+}
+.main-navigation a::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0;
+    height: 3px;
+    background: #2c5282;
+    border-radius: 2px;
+    transition: width 0.3s;
+}
+.main-navigation a.active::after, .main-navigation a:hover::after {
+    width: 80%;
+}
+.main-navigation a:hover {
+    color: #7fc97f;
+}
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    background: #fff;
+}
+.page-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    margin-top: 0;
+    text-align: center;
+}
+hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 4rem auto;
+    width: 80%;
+}
+
+/* Profile Section */
+.profile-section, .tech-section {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    writing-mode: vertical-rl;
+    text-align: center;
+    justify-self: center;
+    background-color: #f0f4f8;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.profile-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.profile-card {
+    text-align: center;
+    max-width: 250px;
+}
+.profile-card:nth-child(2) {
+    padding-top: 50px; /* 김일강 카드 여백 */
+}
+
+.profile-card img {
+    width: 150px;
+    height: auto;
+    border: 5px solid #e2e8f0;
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+
+.profile-card .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.profile-card .motto {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin: 0;
+}
+
+/* Tech Section */
+.tech-section {
+    grid-template-columns: 1fr 150px;
+}
+.tech-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.tech-card {
+    text-align: center;
+}
+.tech-card img {
+    width: 120px;
+    height: auto;
+    filter: grayscale(30%);
+    transition: filter 0.3s, transform 0.3s;
+}
+.tech-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+.tech-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.site-footer {
+    background: #16225e;
+    color: #fff;
+    text-align: center;
+    padding: 38px 10px 32px 10px;
+    font-size: 1.18rem;
+    letter-spacing: -0.5px;
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+    .profile-section, .tech-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .section-title {
+        writing-mode: horizontal-tb;
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .tech-section {
+        grid-template-columns: 1fr;
+    }
+     .tech-section .section-title{
+        order: -1; /* 기술소개 타이틀 위로 */
+    }
+}
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 2vw 6px 2vw;
+    }
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    .main-navigation ul {
+        gap: 8px;
+    }
+} 
