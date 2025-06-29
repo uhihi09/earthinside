@@ -1,9 +1,14 @@
+/* ====== 지구인사이드 제품 & 브랜드 페이지 스타일 ====== */
+
+/* ====== 전체 공통 스타일 ====== */
 body {
     margin: 0;
     font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
     background: #f6fff2;
     color: #222;
 }
+
+/* ====== 상단 고정 네비게이션 ====== */
 .site-header {
     background: #eaffea;
     display: flex;
@@ -16,12 +21,15 @@ body {
     box-shadow: 0 2px 16px rgba(127,201,127,0.10);
     border-bottom: 2px solid #b2e59f;
 }
+
+/* 로고 영역 */
 .logo {
     display: flex;
     align-items: center;
     gap: 14px;
     cursor: pointer;
 }
+
 .logo img {
     height: 48px;
     width: 48px;
@@ -29,6 +37,7 @@ body {
     border-radius: 50%;
     background: #fff;
 }
+
 .logo-text {
     font-size: 2rem;
     font-weight: 900;
@@ -41,7 +50,12 @@ body {
     text-shadow: 0 2px 12px rgba(127,201,127,0.08);
     transition: transform 0.2s;
 }
-.logo-text:hover { transform: scale(1.06) rotate(-2deg); }
+
+.logo-text:hover { 
+    transform: scale(1.06) rotate(-2deg); 
+}
+
+/* 네비게이션 메뉴 */
 .main-navigation ul {
     list-style: none;
     display: flex;
@@ -50,10 +64,12 @@ body {
     margin: 0;
     align-items: center;
 }
+
 .main-navigation li {
     display: flex;
     align-items: center;
 }
+
 .main-navigation a {
     text-decoration: none;
     color: #222;
@@ -66,9 +82,12 @@ body {
     transition: color 0.2s;
     display: inline-block;
 }
-.main-navigation a.active, .main-navigation a:focus {
+
+.main-navigation a.active, 
+.main-navigation a:focus {
     color: #2c5282;
 }
+
 .main-navigation a::after {
     content: '';
     display: block;
@@ -79,29 +98,39 @@ body {
     border-radius: 2px;
     transition: width 0.3s;
 }
-.main-navigation a.active::after, .main-navigation a:hover::after {
+
+.main-navigation a.active::after, 
+.main-navigation a:hover::after {
     width: 80%;
 }
+
 .main-navigation a:hover {
     color: #7fc97f;
 }
+
+/* ====== 메인 콘텐츠 영역 ====== */
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 16px 0 16px;
 }
+
+/* 페이지 제목 */
 .section-title {
     font-size: 2.2rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
     margin-top: 0;
 }
+
 .subtitle {
     font-size: 1.1rem;
     color: #2c5282;
     margin-bottom: 2.5rem;
     text-align: center;
 }
+
+/* ====== 제품 목록 섹션 ====== */
 .product-list {
     display: flex;
     justify-content: center;
@@ -109,6 +138,8 @@ body {
     flex-wrap: wrap;
     margin-bottom: 2.5rem;
 }
+
+/* 제품 카드 */
 .product-card {
     background: #fff;
     border-radius: 18px;
@@ -120,10 +151,12 @@ body {
     align-items: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .product-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 32px #7fc97f33;
 }
+
 .product-card img {
     width: 100%;
     aspect-ratio: 1/1;
@@ -132,18 +165,22 @@ body {
     margin-bottom: 1.2rem;
     box-shadow: 0 2px 8px #b2e59f22;
 }
+
 .product-name {
     font-size: 1.08rem;
     font-weight: 700;
     margin-bottom: 0.3rem;
     text-align: center;
 }
+
 .product-price {
     font-size: 1.15rem;
     font-weight: 900;
     color: #2c5282;
     margin-bottom: 0.5rem;
 }
+
+/* 제품 평점 */
 .product-rating {
     display: flex;
     align-items: center;
@@ -151,31 +188,89 @@ body {
     font-size: 1.2rem;
     margin-top: 0.2rem;
 }
+
 .star {
     color: #ffd600;
     font-size: 1.3rem;
 }
+
 .star.half {
     color: #ffd600;
     opacity: 0.5;
 }
+
 .score {
     font-size: 1.05rem;
     color: #222;
     margin-left: 6px;
     font-weight: 700;
 }
+
+/* ====== 지도 섹션 ====== */
 .map-section {
-    margin: 2.5rem auto 0 auto;
-    display: flex;
-    justify-content: center;
-}
-.map-section img {
-    width: 100%;
-    max-width: 500px;
+    background: #fff;
     border-radius: 18px;
-    box-shadow: 0 4px 18px #2c528222;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 24px 28px 24px;
+    margin: 40px auto 0 auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
+
+.map-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2a7c4f;
+    margin-bottom: 4px;
+    letter-spacing: -1px;
+}
+
+.map-desc {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* 지도 iframe 래퍼 */
+.map-iframe-wrap {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    margin: 0 auto;
+    transition: box-shadow 0.2s;
+}
+
+.map-iframe-wrap:hover {
+    box-shadow: 0 6px 32px rgba(42,124,79,0.15);
+}
+
+.map-iframe-wrap iframe {
+    display: block;
+    width: 100%;
+    min-height: 220px;
+    border: 0;
+}
+
+#shopMap {
+    width: 100%;
+    height: 350px;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    margin: 0 auto;
+    transition: box-shadow 0.2s;
+}
+
+#shopMap:hover {
+    box-shadow: 0 6px 32px rgba(42,124,79,0.15);
+}
+
+/* ====== 푸터 ====== */
 .site-footer {
     background: #16225e;
     color: #fff;
@@ -185,40 +280,83 @@ body {
     letter-spacing: -0.5px;
     margin-top: 0;
 }
+
+.site-footer a {
+    color: #b2e59f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #7fc97f;
+}
+
+/* ====== 반응형 디자인 ====== */
 @media (max-width: 900px) {
     .main-content {
         padding: 18px 4vw 0 4vw;
     }
+    
     .product-list {
         gap: 18px;
     }
+    
     .main-navigation ul {
         gap: 18px;
     }
 }
+
 @media (max-width: 600px) {
     .site-header {
         flex-direction: column;
         gap: 10px;
         padding: 10px 2vw 6px 2vw;
     }
+    
     .logo-text {
         font-size: 1.1rem;
     }
+    
     .main-navigation ul {
         gap: 6px;
     }
+    
     .main-content {
         padding: 8px 2vw 0 2vw;
     }
+    
     .product-card {
         width: 98vw;
         max-width: 340px;
         padding: 12px 6px 10px 6px;
     }
-    .map-section img {
-        border-radius: 10px;
+    
+    .map-section {
+        padding: 18px 4px 16px 4px;
+        max-width: 98vw;
     }
+    
+    #shopMap {
+        height: 220px;
+    }
+    
+    .map-title {
+        font-size: 1.1rem;
+    }
+    
+    .map-desc {
+        font-size: 0.95rem;
+    }
+    
+    .map-iframe-wrap {
+        max-width: 98vw;
+    }
+    
+    .map-iframe-wrap iframe {
+        min-height: 160px;
+        height: 38vw;
+    }
+    
     .main-navigation a {
         font-size: 1rem;
         padding: 8px 0 6px 0;

@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지구인사이드 - 메인</title>
+    <title>지구인사이드 - 제로웨이스트 메인</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <!-- 상단 고정 네비게이션 (flex/grid 활용) -->
+    <!-- ====== 상단 고정 네비게이션 ====== -->
     <header class="site-header">
+        <!-- 로고 영역 -->
         <div class="logo" onclick="location.href='main.html'">
             <img src="../images/logo.png" alt="지구인사이드 로고">
             <span class="logo-text">지구인사이드</span>
         </div>
+        
+        <!-- 메인 네비게이션 메뉴 -->
         <nav class="main-navigation">
             <ul>
                 <li><a href="main.html" class="active">홈</a></li>
@@ -24,23 +27,28 @@
             </ul>
         </nav>
     </header>
-    <!-- 공지 팝업 (닫기 가능) -->
+
+    <!-- ====== 공지사항 팝업 ====== -->
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-btn" id="closePopup">×</span>
             <h3>공지사항</h3>
             <p>제로웨이스트 캠페인에 참여해주셔서 감사합니다!</p>
+            <button onclick="openPopup()" class="popup-btn">자세히 보기</button>
         </div>
     </div>
+
+    <!-- ====== 메인 콘텐츠 영역 ====== -->
     <main class="main-content">
-        <!-- 히어로 카드 (이미지+타이틀) -->
+        <!-- 히어로 섹션 - 메인 이미지와 타이틀 -->
         <section class="hero-card">
             <img src="../images/forest.png" alt="숲 이미지" id="mainImg">
             <div class="hero-title">
                 <h1>제로웨이스트, <span>지구를 살리는 작은 실천</span></h1>
             </div>
         </section>
-        <!-- 소개 카드 (flex) -->
+
+        <!-- 소개 섹션 - 제로웨이스트 개념 설명 -->
         <section class="card intro-card">
             <img src="../images/leaf.png" alt="잎사귀" class="leaf-img">
             <div class="intro-text">
@@ -51,7 +59,8 @@
                 </ul>
             </div>
         </section>
-        <!-- 5R 원칙 카드 (grid) -->
+
+        <!-- 5R 원칙 섹션 - 제로웨이스트 핵심 원칙 -->
         <section class="card five-r-card">
             <h2>5R 원칙</h2>
             <div class="five-r-list">
@@ -62,8 +71,10 @@
                 <div class="five-r-item"><span>Rot</span><small>퇴비시키기</small></div>
             </div>
         </section>
-        <!-- 표+로드맵 카드 (grid) -->
+
+        <!-- 통계 및 로드맵 섹션 -->
         <section class="card stats-roadmap-card">
+            <!-- 플라스틱 배출량 통계 -->
             <div class="stats-box">
                 <h3>연간 플라스틱 배출량</h3>
                 <table class="stats-table">
@@ -79,6 +90,8 @@
                 </table>
                 <div class="unit">(단위 : 톤)</div>
             </div>
+            
+            <!-- 제로웨이스트 로드맵 -->
             <div class="roadmap-box">
                 <h3>제로 웨이스트 로드맵</h3>
                 <ol class="roadmap-flow">
@@ -90,20 +103,27 @@
                 </ol>
             </div>
         </section>
-        <!-- 체크리스트+DIY 카드 (flex) -->
+
+        <!-- 체크리스트 및 DIY 영상 섹션 -->
         <section class="card checklist-diy-card">
+            <!-- 체크리스트 - 유튜브 영상 선택 -->
             <ul class="checklist-box">
-                <li><label><input type="checkbox"> 초보자를 위한 단계별 시작 방법</label></li>
+                <li><label><input type="checkbox" checked> 초보자를 위한 단계별 시작 방법</label></li>
                 <li><label><input type="checkbox"> 생활 공간별 실천법</label></li>
                 <li><label><input type="checkbox"> 계절별/상황별 맞춤 팁</label></li>
-                <li><label><input type="checkbox" checked style="accent-color:gold;"> 천연재료 DIY 제작법</label></li>
+                <li><label><input type="checkbox"> 천연재료 DIY 제작법</label></li>
             </ul>
+            
+            <!-- 영상 표시 영역 -->
             <div class="diy-box">
-                <img src="../images/diy.jpg" alt="DIY 이미지" class="diy-img">
-                <div class="play-btn">▶</div>
+                <div id="video-container">
+                    <img src="../images/diy.jpg" alt="DIY 이미지" class="diy-img" id="diy-img">
+                    <div class="play-btn" id="play-btn">▶</div>
+                </div>
             </div>
         </section>
-        <!-- 문의 폼 카드 -->
+
+        <!-- 문의 폼 섹션 -->
         <section class="card contact-card" id="contact">
             <form class="contact-form">
                 <input type="text" placeholder="가벼운 문의" required>
@@ -111,12 +131,17 @@
             </form>
         </section>
     </main>
-    <!-- 푸터 -->
+
+    <!-- ====== 푸터 ====== -->
     <footer class="site-footer">
-        <div>email : junha0729@dgsw.hs.kr | <a href="#">개인정보처리방침</a><br>
-        이 웹사이트는 사용자의 정보를 함부로 쓰지않습니다.<br>
-        본 사이트의 저작권은 없습니다 아무렇게나 쓰세요</div>
+        <div>
+            email : junha0729@dgsw.hs.kr | <a href="#">개인정보처리방침</a><br>
+            이 웹사이트는 사용자의 정보를 함부로 쓰지않습니다.<br>
+            본 사이트의 저작권은 없습니다 아무렇게나 쓰세요
+        </div>
     </footer>
+
+    <!-- JavaScript 파일 연결 -->
     <script src="../js/main.js"></script>
 </body>
 </html>

@@ -1,9 +1,14 @@
+/* ====== 지구인사이드 리소스 센터 페이지 스타일 ====== */
+
+/* ====== 전체 공통 스타일 ====== */
 body {
     margin: 0;
     font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
-    background: #fff;
+    background: #f6fff2;
     color: #222;
 }
+
+/* ====== 상단 고정 네비게이션 ====== */
 .site-header {
     background: #eaffea;
     display: flex;
@@ -16,12 +21,15 @@ body {
     box-shadow: 0 2px 16px rgba(127,201,127,0.10);
     border-bottom: 2px solid #b2e59f;
 }
+
+/* 로고 영역 */
 .logo {
     display: flex;
     align-items: center;
     gap: 14px;
     cursor: pointer;
 }
+
 .logo img {
     height: 48px;
     width: 48px;
@@ -29,6 +37,7 @@ body {
     border-radius: 50%;
     background: #fff;
 }
+
 .logo-text {
     font-size: 2rem;
     font-weight: 900;
@@ -41,7 +50,12 @@ body {
     text-shadow: 0 2px 12px rgba(127,201,127,0.08);
     transition: transform 0.2s;
 }
-.logo-text:hover { transform: scale(1.06) rotate(-2deg); }
+
+.logo-text:hover { 
+    transform: scale(1.06) rotate(-2deg); 
+}
+
+/* 네비게이션 메뉴 */
 .main-navigation ul {
     list-style: none;
     display: flex;
@@ -50,10 +64,12 @@ body {
     margin: 0;
     align-items: center;
 }
+
 .main-navigation li {
     display: flex;
     align-items: center;
 }
+
 .main-navigation a {
     text-decoration: none;
     color: #222;
@@ -66,9 +82,12 @@ body {
     transition: color 0.2s;
     display: inline-block;
 }
-.main-navigation a.active, .main-navigation a:focus {
+
+.main-navigation a.active, 
+.main-navigation a:focus {
     color: #2c5282;
 }
+
 .main-navigation a::after {
     content: '';
     display: block;
@@ -79,18 +98,25 @@ body {
     border-radius: 2px;
     transition: width 0.3s;
 }
-.main-navigation a.active::after, .main-navigation a:hover::after {
+
+.main-navigation a.active::after, 
+.main-navigation a:hover::after {
     width: 80%;
 }
+
 .main-navigation a:hover {
     color: #7fc97f;
 }
+
+/* ====== 메인 콘텐츠 영역 ====== */
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 16px;
     background: #fff;
 }
+
+/* 페이지 제목 */
 .page-title {
     font-size: 2.2rem;
     font-weight: 900;
@@ -98,6 +124,8 @@ body {
     margin-top: 0;
     text-align: center;
 }
+
+/* 구분선 */
 hr {
     border: none;
     border-top: 1px solid #e2e8f0;
@@ -105,8 +133,9 @@ hr {
     width: 80%;
 }
 
-/* Profile Section */
-.profile-section, .tech-section {
+/* ====== 프로필 섹션 ====== */
+.profile-section, 
+.tech-section {
     display: grid;
     grid-template-columns: 150px 1fr;
     align-items: center;
@@ -114,6 +143,7 @@ hr {
     padding: 2rem 0;
 }
 
+/* 섹션 제목 */
 .section-title {
     font-size: 1.8rem;
     font-weight: 700;
@@ -127,6 +157,7 @@ hr {
     box-sizing: border-box;
 }
 
+/* 프로필 콘텐츠 */
 .profile-content {
     display: flex;
     justify-content: center;
@@ -134,10 +165,12 @@ hr {
     gap: 50px;
 }
 
+/* 프로필 카드 */
 .profile-card {
     text-align: center;
     max-width: 250px;
 }
+
 .profile-card:nth-child(2) {
     padding-top: 50px; /* 김일강 카드 여백 */
 }
@@ -162,34 +195,41 @@ hr {
     margin: 0;
 }
 
-/* Tech Section */
+/* ====== 기술 섹션 ====== */
 .tech-section {
     grid-template-columns: 1fr 150px;
 }
+
 .tech-content {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
+
+/* 기술 카드 */
 .tech-card {
     text-align: center;
 }
+
 .tech-card img {
     width: 120px;
     height: auto;
     filter: grayscale(30%);
     transition: filter 0.3s, transform 0.3s;
 }
+
 .tech-card:hover img {
     filter: grayscale(0%);
     transform: scale(1.1);
 }
+
 .tech-card p {
     font-size: 1.2rem;
     font-weight: 600;
     margin-top: 1rem;
 }
 
+/* ====== 푸터 ====== */
 .site-footer {
     background: #16225e;
     color: #fff;
@@ -200,37 +240,56 @@ hr {
     margin-top: 0;
 }
 
+.site-footer a {
+    color: #b2e59f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #7fc97f;
+}
+
+/* ====== 반응형 디자인 ====== */
 @media (max-width: 900px) {
-    .profile-section, .tech-section {
+    .profile-section, 
+    .tech-section {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    
     .section-title {
         writing-mode: horizontal-tb;
         width: 100%;
         padding: 0.5rem;
     }
+    
     .profile-content {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
+    
     .tech-section {
         grid-template-columns: 1fr;
     }
-     .tech-section .section-title{
+    
+    .tech-section .section-title {
         order: -1; /* 기술소개 타이틀 위로 */
     }
 }
+
 @media (max-width: 600px) {
     .site-header {
         flex-direction: column;
         gap: 10px;
         padding: 10px 2vw 6px 2vw;
     }
+    
     .logo-text {
         font-size: 1.1rem;
     }
+    
     .main-navigation ul {
         gap: 8px;
     }
