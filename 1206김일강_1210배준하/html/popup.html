@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지구인사이드 - 공지사항</title>
+    <style>
+        /* ====== 전체 페이지 스타일 ====== */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        /* ====== 팝업 컨테이너 ====== */
+        .popup-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* ====== 제목 스타일 ====== */
+        h2 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /* ====== 텍스트 스타일 ====== */
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        /* ====== 하이라이트 박스 ====== */
+        .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        /* ====== 닫기 버튼 ====== */
+        .close-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .close-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- ====== 팝업 콘텐츠 ====== -->
+    <div class="popup-container">
+        <!-- 팝업 제목 -->
+        <h2>🌱 제로웨이스트 캠페인 안내</h2>
+        
+        <!-- 환영 메시지 -->
+        <p>지구인사이드에 오신 것을 환영합니다!</p>
+        
+        <!-- 새로운 기능 안내 -->
+        <div class="highlight">
+            <strong>새로운 기능:</strong><br>
+            체크리스트 항목을 클릭하면 관련 유튜브 영상을 바로 시청할 수 있습니다!
+        </div>
+        
+        <!-- 마무리 메시지 -->
+        <p>지구를 위한 작은 실천, 함께 시작해보세요.</p>
+        
+        <!-- 닫기 버튼 -->
+        <button class="close-button" onclick="window.close()">닫기</button>
+    </div>
+</body>
+</html> 

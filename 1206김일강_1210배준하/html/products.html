@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="../css/products.css">
 </head>
 <body>
+    <!-- ====== 상단 고정 네비게이션 ====== -->
     <header class="site-header">
+        <!-- 로고 영역 -->
         <div class="logo" onclick="location.href='main.html'">
             <img src="../images/logo.png" alt="지구인사이드 로고">
             <span class="logo-text">지구인사이드</span>
         </div>
+        
+        <!-- 메인 네비게이션 메뉴 -->
         <nav class="main-navigation">
             <ul>
                 <li><a href="main.html">홈</a></li>
@@ -23,47 +27,90 @@
             </ul>
         </nav>
     </header>
+
+    <!-- ====== 메인 콘텐츠 영역 ====== -->
     <main class="main-content">
+        <!-- 페이지 제목 -->
         <h1 class="section-title">추천 제품!</h1>
         <p class="subtitle">많은 사람들이 이용하고 있어요!</p>
+        
+        <!-- 제품 목록 섹션 -->
         <section class="product-list">
+            <!-- 제품 카드 1 -->
             <div class="product-card">
                 <img src="../images/product.png" alt="제로 양치 키트">
                 <div class="product-name">제로 양치 키트 (제로 웨이스트 양치세트)</div>
                 <div class="product-price">6000원</div>
                 <div class="product-rating">
-                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star half">★</span>
                     <span class="score">4.5</span>
                 </div>
             </div>
+            
+            <!-- 제품 카드 2 -->
             <div class="product-card">
                 <img src="../images/product.png" alt="제로 양치 키트">
                 <div class="product-name">제로 양치 키트 (제로 웨이스트 양치세트)</div>
                 <div class="product-price">6000원</div>
                 <div class="product-rating">
-                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star half">★</span>
                     <span class="score">4.5</span>
                 </div>
             </div>
+            
+            <!-- 제품 카드 3 -->
             <div class="product-card">
                 <img src="../images/product.png" alt="제로 양치 키트">
                 <div class="product-name">제로 양치 키트 (제로 웨이스트 양치세트)</div>
                 <div class="product-price">6000원</div>
                 <div class="product-rating">
-                    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star half">★</span>
                     <span class="score">4.5</span>
                 </div>
             </div>
         </section>
+        
+        <!-- 지도 섹션 - 제로웨이스트 샵 위치 -->
         <section class="map-section">
-            <img src="../images/map.jpg" alt="제로웨이스트 지도">
+            <h2 class="map-title">제로웨이스트 샵 위치 안내</h2>
+            <p class="map-desc">가까운 제로웨이스트 샵을 방문해보세요!</p>
+            <div class="map-iframe-wrap">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d86435.71526154553!2d127.02393255365423!3d37.524767046929036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z7KCc66Gc7Juo7J207Iqk7Yq47IO1!5e0!3m2!1sko!2skr!4v1750848760089!5m2!1sko!2skr" 
+                    width="100%" 
+                    height="340" 
+                    style="border:0;" 
+                    allowfullscreen 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade" 
+                    title="제로웨이스트 샵 위치 지도">
+                </iframe>
+            </div>
         </section>
     </main>
+
+    <!-- ====== 푸터 ====== -->
     <footer class="site-footer">
-        <div>email : junha0729@dgsw.hs.kr<br>
-        이 웹사이트는 사용자의 정보를 함부로 쓰지않습니다.<br>
-        본 사이트의 저작권은 없습니다 아무렇게나 쓰세요</div>
+        <div>
+            email : junha0729@dgsw.hs.kr | <a href="#">개인정보처리방침</a><br>
+            이 웹사이트는 사용자의 정보를 함부로 쓰지않습니다.<br>
+            본 사이트의 저작권은 없습니다 아무렇게나 쓰세요
+        </div>
     </footer>
+
+    <!-- JavaScript 파일 연결 -->
     <script src="../js/products.js"></script>
 </body>
 </html> 

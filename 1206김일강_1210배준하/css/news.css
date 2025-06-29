@@ -1,9 +1,14 @@
+/* ====== 지구인사이드 뉴스 & 트렌드 페이지 스타일 ====== */
+
+/* ====== 전체 공통 스타일 ====== */
 body {
     margin: 0;
     font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
     background: #f6fff2;
     color: #222;
 }
+
+/* ====== 상단 고정 네비게이션 ====== */
 .site-header {
     background: #eaffea;
     display: flex;
@@ -16,12 +21,15 @@ body {
     box-shadow: 0 2px 16px rgba(127,201,127,0.10);
     border-bottom: 2px solid #b2e59f;
 }
+
+/* 로고 영역 */
 .logo {
     display: flex;
     align-items: center;
     gap: 14px;
     cursor: pointer;
 }
+
 .logo img {
     height: 48px;
     width: 48px;
@@ -29,6 +37,7 @@ body {
     border-radius: 50%;
     background: #fff;
 }
+
 .logo-text {
     font-size: 2rem;
     font-weight: 900;
@@ -41,7 +50,12 @@ body {
     text-shadow: 0 2px 12px rgba(127,201,127,0.08);
     transition: transform 0.2s;
 }
-.logo-text:hover { transform: scale(1.06) rotate(-2deg); }
+
+.logo-text:hover { 
+    transform: scale(1.06) rotate(-2deg); 
+}
+
+/* 네비게이션 메뉴 */
 .main-navigation ul {
     list-style: none;
     display: flex;
@@ -50,10 +64,12 @@ body {
     margin: 0;
     align-items: center;
 }
+
 .main-navigation li {
     display: flex;
     align-items: center;
 }
+
 .main-navigation a {
     text-decoration: none;
     color: #222;
@@ -66,9 +82,12 @@ body {
     transition: color 0.2s;
     display: inline-block;
 }
-.main-navigation a.active, .main-navigation a:focus {
+
+.main-navigation a.active, 
+.main-navigation a:focus {
     color: #2c5282;
 }
+
 .main-navigation a::after {
     content: '';
     display: block;
@@ -79,23 +98,32 @@ body {
     border-radius: 2px;
     transition: width 0.3s;
 }
-.main-navigation a.active::after, .main-navigation a:hover::after {
+
+.main-navigation a.active::after, 
+.main-navigation a:hover::after {
     width: 80%;
 }
+
 .main-navigation a:hover {
     color: #7fc97f;
 }
+
+/* ====== 메인 콘텐츠 영역 ====== */
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 16px 0 16px;
 }
+
+/* 페이지 제목 */
 .section-title {
     font-size: 2.2rem;
     font-weight: 900;
     margin-bottom: 2.5rem;
     margin-top: 0;
 }
+
+/* ====== 뉴스 목록 섹션 ====== */
 .news-list {
     display: flex;
     justify-content: center;
@@ -103,6 +131,8 @@ body {
     flex-wrap: wrap;
     margin-bottom: 2.5rem;
 }
+
+/* 뉴스 카드 */
 .news-card {
     background: #fff;
     border-radius: 18px;
@@ -115,16 +145,20 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
 }
+
 .news-card img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
     display: block;
 }
+
 .news-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 32px #7fc97f33;
 }
+
+/* ====== 푸터 ====== */
 .site-footer {
     background: #16225e;
     color: #fff;
@@ -134,36 +168,56 @@ body {
     letter-spacing: -0.5px;
     margin-top: 0;
 }
+
+.site-footer a {
+    color: #b2e59f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #7fc97f;
+}
+
+/* ====== 반응형 디자인 ====== */
 @media (max-width: 900px) {
     .main-content {
         padding: 18px 4vw 0 4vw;
     }
+    
     .news-list {
         gap: 18px;
     }
+    
     .main-navigation ul {
         gap: 18px;
     }
 }
+
 @media (max-width: 600px) {
     .site-header {
         flex-direction: column;
         gap: 10px;
         padding: 10px 2vw 6px 2vw;
     }
+    
     .logo-text {
         font-size: 1.1rem;
     }
+    
     .main-navigation ul {
         gap: 6px;
     }
+    
     .main-navigation a {
         font-size: 1rem;
         padding: 8px 0 6px 0;
     }
+    
     .main-content {
         padding: 8px 2vw 0 2vw;
     }
+    
     .news-card {
         width: 98vw;
         max-width: 340px;
